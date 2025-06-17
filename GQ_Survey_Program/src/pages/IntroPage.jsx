@@ -1,4 +1,3 @@
-// src/pages/IntroPage.jsx
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -19,6 +18,7 @@ const fadeInUp = {
 const TEXTS = {
   ko: {
     lang: '한국어',
+    guide: 'GQ (Grantsmanship Quotients)',
     title: '당신의 제안 역량은 어디에 있을까요?',
     description1: '제안서 작성의 본질은 단지 논리를 구성하는 것이 아니라,',
     description2: '문제에 대한 통찰, 동기, 실행력까지 종합적으로 설계하는 일입니다.',
@@ -30,6 +30,7 @@ const TEXTS = {
   },
   en: {
     lang: 'English',
+    guide: 'GQ (Grantsmanship Quotients)',
     title: 'Where does your proposal competency stand?',
     description1: "The essence of proposal writing is not just constructing logic,",
     description2: "but holistically designing insight, motivation, and execution.",
@@ -49,7 +50,6 @@ const LANGS = [
 const IntroPage = () => {
   const [lang, setLang] = useState('ko');
   const navigate = useNavigate();
-
   const t = TEXTS[lang];
 
   return (
@@ -84,25 +84,43 @@ const IntroPage = () => {
         ))}
       </div>
 
-      <motion.h1 custom={0} variants={fadeInUp} initial="hidden" animate="visible" style={{ fontSize: '2rem', marginBottom: '1rem' }}>
-        {t.title}
+      {/* 가장 큰 제목 */}
+      <motion.h1
+        custom={0}
+        variants={fadeInUp}
+        initial="hidden"
+        animate="visible"
+        style={{ fontSize: '2.6rem', fontWeight: 800, marginBottom: '1rem', textAlign: 'center', letterSpacing: '-0.5px' }}
+      >
+        {t.guide}
       </motion.h1>
 
-      <motion.p custom={1} variants={fadeInUp} initial="hidden" animate="visible">
+      {/* 도입 질문 - 본문 크기 */}
+      <motion.p
+        custom={1}
+        variants={fadeInUp}
+        initial="hidden"
+        animate="visible"
+        style={{ fontSize: '1.35rem', marginBottom: '1.2rem', color: '#223', fontWeight: 600, textAlign: 'center' }}
+      >
+        {t.title}
+      </motion.p>
+
+      <motion.p custom={2} variants={fadeInUp} initial="hidden" animate="visible">
         {t.description1}<br />
         <strong>{t.description2}</strong>
       </motion.p>
 
-      <motion.p custom={2} variants={fadeInUp} initial="hidden" animate="visible" style={{ marginTop: '1rem' }}>
+      <motion.p custom={3} variants={fadeInUp} initial="hidden" animate="visible" style={{ marginTop: '1rem' }}>
         {t.description3}
       </motion.p>
 
-      <motion.p custom={3} variants={fadeInUp} initial="hidden" animate="visible">
+      <motion.p custom={4} variants={fadeInUp} initial="hidden" animate="visible">
         {t.description4}
       </motion.p>
 
       <motion.blockquote
-        custom={4}
+        custom={5}
         variants={fadeInUp}
         initial="hidden"
         animate="visible"
@@ -119,7 +137,7 @@ const IntroPage = () => {
 
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
         <motion.button
-          custom={5}
+          custom={6}
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -138,7 +156,7 @@ const IntroPage = () => {
       </div>
 
       <motion.p
-        custom={6}
+        custom={7}
         variants={fadeInUp}
         initial="hidden"
         animate="visible"
