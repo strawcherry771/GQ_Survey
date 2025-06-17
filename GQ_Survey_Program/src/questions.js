@@ -1,7 +1,8 @@
 // src/questions.js
 
-export const questions = [
-    {
+export const questions = {
+  ko:
+    [{
       id: 1,
       category: "전략",
       text: "사업 공고문에서 목적이 모호할 때 당신은?",
@@ -130,7 +131,7 @@ export const questions = [
           "논리적인 구성 체계를 최우선으로 본다",
           "성과 지표 달성 가능성을 중시한다",
           "예산 편성의 타당성을 검토한다",
-          "RFP 행간 속 숨은 의도를 해석하려 한다"
+          "RFP 행간 속 숨은 의도 해석을 중시한다"
         ]
       },
       {
@@ -220,6 +221,228 @@ export const questions = [
           "실행 전 팀의 운영 구조를 재정비한다",
           "실패 예방을 위한 구조화된 실험을 설계한다"
         ]
-      }
-  ];
+      }],
+      en: [
+        {
+          id: 1,
+          category: "Strategy",
+          text: "When the objective of a business announcement is ambiguous, what do you do?",
+          options: [
+            "Set it to a field where we have strengths",
+            "Analyze the structure of similar cases to supplement the meaning",
+            "Clarify the objective using relevant policy frameworks",
+            "See the abstract goal as autonomy in strategic design"
+          ]
+        },
+        {
+          id: 2,
+          category: "Strategy",
+          text: 'If "strengthening regional linkage" is an evaluation item in the RFP, what do you do?',
+          options: [
+            "Prioritize signing MOUs with local institutions",
+            "Utilize existing regional networks first",
+            "Map local social problems and resources in advance",
+            "Design a strategy that can intervene in system bottlenecks"
+          ]
+        },
+        {
+          id: 3,
+          category: "Strategy",
+          text: "How do you differentiate your team in a highly competitive project?",
+          options: [
+            "Emphasize our track record and infrastructure",
+            "Highlight the originality of new technology development",
+            "Try to differentiate by redefining the problem",
+            "Present insights on connections between the problem and the system"
+          ]
+        },
+        {
+          id: 4,
+          category: "Strategy",
+          text: "What is the first item you organize when writing a proposal?",
+          options: [
+            "First, organize the project goals in detail",
+            "Start by defining the core problem",
+            "First, structure the flowchart of the strategy",
+            "Organize considering the psychological flow of the reviewer"
+          ]
+        },
+        {
+          id: 5,
+          category: "Strategy",
+          text: "What do you value most when assessing the likelihood of success?",
+          options: [
+            "Primarily review the total project budget",
+            "Look at the team’s competency and ability to execute",
+            "Judge mainly by the policy environment and trends",
+            "Examine the social perspective on the necessity of the project"
+          ]
+        },
+        {
+          id: 6,
+          category: "Drive",
+          text: "When the proposal deadline is approaching but you are emotionally exhausted, what do you do?",
+          options: [
+            "Go with the flow and take care of your condition",
+            "Reset small, manageable goals first",
+            "Try to regain motivation by collaborating with colleagues",
+            "Recall the faces of the proposal’s beneficiaries"
+          ]
+        },
+        {
+          id: 7,
+          category: "Drive",
+          text: "When failures are repeated, what is your inner self-talk?",
+          options: [
+            "Think that someone else might be better suited",
+            "Question the current approach",
+            "Acknowledge that you may not be fully prepared yet",
+            "Try to learn structural causes through failure"
+          ]
+        },
+        {
+          id: 8,
+          category: "Drive",
+          text: "If a team member asks, “Why do we have to do this project?”, what is your response?",
+          options: [
+            "See it as a project to secure achievements",
+            "Respond by asking, “If not us, then who?”",
+            "Believe this project aligns with our team’s mission",
+            "Consider it an opportunity to prove the team's reason for existence"
+          ]
+        },
+        {
+          id: 9,
+          category: "Drive",
+          text: "How do you handle a task where 'rewards' are not visible?",
+          options: [
+            "Gradually lose motivation",
+            "Consider other indirect benefits",
+            "Accept it as a growth opportunity even without rewards",
+            "Seek personal meaning connected to your mission"
+          ]
+        },
+        {
+          id: 10,
+          category: "Drive",
+          text: "At what point in proposal writing do you feel most emotionally engaged?",
+          options: [
+            "Feel most satisfied when completing diagrams",
+            "Immerse yourself when refining logical structures",
+            "Feel moved when a sentence reflects your beliefs",
+            "Engage deeply when the team agrees on direction"
+          ]
+        },
+        {
+          id: 11,
+          category: "Knowledge",
+          text: "What do you check first when writing the ‘problem definition’ section?",
+          options: [
+            "Review existing research materials first",
+            "Prioritize reviewing objective figures and statistics",
+            "Look at policy demand and stakeholders’ comments",
+            "Analyze structural causes within social and policy conditions"
+          ]
+        },
+        {
+          id: 12,
+          category: "Knowledge",
+          text: "Which part of the RFP do you think the reviewer values most?",
+          options: [
+            "Give top priority to logical structure",
+            "Emphasize the possibility of achieving performance indicators",
+            "Examine the validity of the budget plan",
+            "Value interpreting the hidden intentions between the lines of the RFP"
+          ]
+        },
+        {
+          id: 13,
+          category: "Knowledge",
+          text: "For a completely new project, what knowledge base do you rely on?",
+          options: [
+            "Compare the structure of similar projects",
+            "Read signals from policy documents and trends",
+            "Learn from failure cases",
+            "Formulate hypotheses about why there have been no previous proposals"
+          ]
+        },
+        {
+          id: 14,
+          category: "Knowledge",
+          text: "What evidence do you present to prove your proposal can actually solve the problem?",
+          options: [
+            "Present the team’s execution experience as primary evidence",
+            "Present results of prior pilot experiments",
+            "Present precedents with proven outcomes",
+            "Design by distinguishing feasibility from impact"
+          ]
+        },
+        {
+          id: 15,
+          category: "Knowledge",
+          text: "What is the most commonly overlooked knowledge in describing the ‘implementation system’?",
+          options: [
+            "Describe the organizational structure of the implementing team",
+            "Clearly assign roles to participants",
+            "Present crisis response methods and flow",
+            "Describe the flow of authority and decision-making system"
+          ]
+        },
+        {
+          id: 16,
+          category: "Action",
+          text: "How do you handle continued disagreement in internal review meetings?",
+          options: [
+            "Try to resolve by majority vote",
+            "Make arbitrary decisions due to time constraints",
+            "Accept it for now, even if it’s not perfect",
+            "Take it as an opportunity to redefine disagreements together"
+          ]
+        },
+        {
+          id: 17,
+          category: "Action",
+          text: "If a key partner does not provide feedback by the deadline, what do you do?",
+          options: [
+            "Proceed as scheduled and exclude that institution",
+            "Continuously urge for a reply",
+            "Check if internal resources can substitute",
+            "Propose alternatives in sync with that institution’s rhythm"
+          ]
+        },
+        {
+          id: 18,
+          category: "Action",
+          text: "What do you value most in collaborative proposal writing?",
+          options: [
+            "Clearly assign roles to participants",
+            "Quickly draft the initial version",
+            "Maintain steady communication frequency",
+            "Establish a common language and shared meaning"
+          ]
+        },
+        {
+          id: 19,
+          category: "Action",
+          text: "From the reviewer’s perspective, what makes a proposal compelling until the end?",
+          options: [
+            "Visual elements such as diagrams",
+            "Logic and clarity of planning",
+            "Overall visual composition of the proposal",
+            "The emotional flow set from the first page"
+          ]
+        },
+        {
+          id: 20,
+          category: "Action",
+          text: "What is the most important action in the first month after project selection?",
+          options: [
+            "Thoroughly check and manage contract terms first",
+            "Break down and review the project schedule again",
+            "Reorganize the team structure before execution",
+            "Design structured experiments to prevent failure"
+          ]
+        }
+      ]
+    };
   

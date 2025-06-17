@@ -1,15 +1,37 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
+const TEXTS = {
+  ko: {
+    title: '🧠 GQ 셀프 테스트',
+    subtitle: '지금 나의 제안 역량은 어떤 모습일까요? \n전략, 실행, 지식, 동기 관점에서 확인해보세요.',
+    namePlaceholder: '이름',
+    positionPlaceholder: '직급 (예: 팀장, 연구원 등)',
+    button: '🚀 테스트 시작',
+    alert: '이름과 직급을 입력해 주세요'
+  },
+  en: {
+    title: '🧠 GQ Self Test',
+    subtitle: 'What does your proposal competency look like? \nCheck your level in strategy, action, knowledge, and drive.',
+    namePlaceholder: 'Name',
+    positionPlaceholder: 'Position (e.g., Team Lead, Researcher, etc.)',
+    button: '🚀 Start Test',
+    alert: 'Please enter your name and position.'
+  }
+};
+
 const StartPage = ({ name, setName, position, setPosition }) => {
+  const { lang } = useParams(); // "ko" or "en"
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
 
+  const t = TEXTS[lang] || TEXTS.ko; // fallback to ko
+
   const handleStart = () => {
     if (name.trim() && position.trim()) {
-      navigate('/test'); // 상태가 아닌 라우터 전환
+      navigate(`/${lang}/test`);
     } else {
-      alert('이름과 직급을 입력해 주세요');
+      alert(t.alert);
     }
   };
 
@@ -30,14 +52,13 @@ const StartPage = ({ name, setName, position, setPosition }) => {
         padding: '2rem',
         textAlign: 'center'
       }}>
-        <h1 style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>🧠 GQ 셀프 테스트</h1>
-        <p style={{ fontSize: '0.95rem', color: '#555', marginBottom: '1.5rem' }}>
-          지금 나의 제안 역량은 어떤 모습일까요? <br />
-          전략, 실행, 지식, 동기 관점에서 확인해보세요.
+        <h1 style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>{t.title}</h1>
+        <p style={{ fontSize: '0.95rem', color: '#555', marginBottom: '1.5rem', whiteSpace: 'pre-line' }}>
+          {t.subtitle}
         </p>
 
         <input
-          placeholder="이름"
+          placeholder={t.namePlaceholder}
           value={name}
           onChange={(e) => setName(e.target.value)}
           style={{
@@ -50,7 +71,7 @@ const StartPage = ({ name, setName, position, setPosition }) => {
           }}
         />
         <input
-          placeholder="직급 (예: 팀장, 연구원 등)"
+          placeholder={t.positionPlaceholder}
           value={position}
           onChange={(e) => setPosition(e.target.value)}
           style={{
@@ -79,7 +100,7 @@ const StartPage = ({ name, setName, position, setPosition }) => {
             transition: 'background 0.3s ease'
           }}
         >
-          🚀 테스트 시작
+          {t.button}
         </button>
       </div>
     </div>
